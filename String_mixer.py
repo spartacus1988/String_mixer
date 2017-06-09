@@ -10,8 +10,15 @@ class Main(tk.Frame):
     def __init__(self, root):
         super().__init__(root)
 
-def readstr():
-    nop
+def readstr(entry):
+    #username = str.get()
+    #print(entry("textvariable"))
+    #s = entry.get()
+    print("dd")
+
+
+    #label("text") = "ddd"
+    #str.set("sdfgfdg")
     #intext = str.get()
     #label = lbl(canvas, text=intext).pack()
 
@@ -25,12 +32,18 @@ if __name__ == "__main__":
     #root.resizable(False, False)
     canvas = cnvs(root, width =1000, height=110, bg='#FFF')
     #canvas.pack()
-    #label = lbl(canvas, text="Input your phrase here").pack()
-    #button = btn(canvas, text = "OK", command = readstr, fg ='red', bg = 'blue' ).pack()
+    label = lbl(canvas, text="Input your phrase here")
+    label.pack()
 
     entry = entr(canvas, textvariable=str).pack()
+    #entry.insert(0, "a default value")
+    #s = entry.get()
+    str.set("a default value")
+    s = str.get()
 
-    button = btn(root, text="OK", command=readstr).pack(side="top")
+    print(s)
+
+    button = btn(root, text="OK", command=readstr(entry)).pack(side="top")
 
     canvas.pack()
     app.pack
